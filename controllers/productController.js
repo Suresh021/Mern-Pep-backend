@@ -1,4 +1,4 @@
-import productModel from "../models/productModel.js";
+import productModel from "../models/productmodel.js";
 const showProducts = async (req, res) => {
     const products = await productModel.find();
     res.render("products/index", { products })
