@@ -4,16 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="/css/login-form.css" />
 </head>
 
 <body>
-    <h1>Login Form</h1>
-    <form action="/admin/login" method="POST">
-        <p><input type="text" name="email" placeholder="Email" /></p>
-        <p><input type="password" name="password" placeholder="Password"></p>
-        <p><button>Submit</button></p>
-    </form>
+    <div class="login-page">
+        <div class="login-card">
+            <h2 class="login-title">Admin Login 🔐</h2>
+            <p class="login-subtitle">Access your dashboard</p>
+
+            <form action="/admin/login" method="POST" class="login-form">
+                <input type="text" name="email" placeholder="Enter your email" />
+                <input type="password" name="password" placeholder="Enter your password" />
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

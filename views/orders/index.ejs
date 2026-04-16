@@ -1,21 +1,67 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Orders</title>
+
+    <link rel="stylesheet" href="/css/orders.css">
 </head>
 
 <body>
-    <p>Orders Admin Page</p>
-    <ol>
-        <% orders.forEach(order=> { %>
-            <li>
-                <%= order._id %> - <%= order.email %> - items(<%= order.cart.length %>) - <%= order.orderValue %> - <%=
-                                    order.status %> - <a href="/orders/edit/<%= order._id %>">Edit</a>
-            </li>
-            <% }) %>
-    </ol>
+
+    <div class="orders-page">
+
+        <div class="orders-header">
+            <h2>📦 Orders Management</h2>
+        </div>
+
+        <div class="table-container">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>User Email</th>
+                        <th>Items</th>
+                        <th>Total Value</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% orders.forEach(order=> { %>
+                        <tr>
+                            <td class="order-id">
+                                <%= order._id %>
+                            </td>
+                            <td>
+                                <%= order.email %>
+                            </td>
+                            <td>
+                                <%= order.cart.length %>
+                            </td>
+                            <td class="price">₹<%= order.orderValue %>
+                            </td>
+
+                            <td>
+                                <span class="status <%= order.status %>">
+                                    <%= order.status %>
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="/orders/edit/<%= order._id %>" class="edit">Edit</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

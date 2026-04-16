@@ -1,0 +1,79 @@
+/* Page */
+.users-page {
+    padding: 20px;
+}
+
+/* Header */
+.users-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.users-header h2 {
+    margin: 0;
+}
+
+/* Add Button */
+.add-btn {
+    padding: 8px 14px;
+    background: #3B82F6;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.add-btn:hover {
+    background: #2563eb;
+}
+
+/* Table */
+.table-container {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th {
+    text-align: left;
+    padding: 12px;
+    background: #f3f4f6;
+}
+
+.users-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Role */
+.role {
+    font-weight: 500;
+}
+
+/* Actions */
+.edit {
+    margin-right: 10px;
+    color: #3B82F6;
+    text-decoration: none;
+}
+
+.delete {
+    color: #ef4444;
+    text-decoration: none;
+}
+
+.edit:hover {
+    text-decoration: underline;
+}
+
+.delete:hover {
+    text-decoration: underline;
+}

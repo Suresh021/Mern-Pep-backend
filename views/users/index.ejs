@@ -4,21 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Users</title>
+
+    <link rel="stylesheet" href="/css/users.css">
 </head>
 
 <body>
-    <div>Users Admin Page</div>
-    <p><a href="/users/add">Add User</a></p>
-    <ol>
-        <% users.forEach(user=>{ %>
-            <li>
-                <%= user.name %> - <%= user.email %> - <%= user.role %> - <a
-                                href="/users/<%= user._id %>/edit">Edit</a>&nbsp;<a
-                                href="/users/<%= user._id %>/delete">Delete</a>
-            </li>
-            <% }) %>
-    </ol>
+
+    <div class="users-page">
+
+        <div class="users-header">
+            <h2>👥 Users Management</h2>
+            <a href="/users/add" class="add-btn">+ Add User</a>
+        </div>
+
+        <div class="table-container">
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% users.forEach(user=> { %>
+                        <tr>
+                            <td>
+                                <%= user.name %>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                            <td class="role">
+                                <%= user.role %>
+                            </td>
+                            <td>
+                                <a href="/users/<%= user._id %>/edit" class="edit">Edit</a>
+                                <a href="/users/<%= user._id %>/delete" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

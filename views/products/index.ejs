@@ -4,24 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products</title>
+
+    <link rel="stylesheet" href="/css/products.css">
 </head>
 
 <body>
 
-    <div>Products Admin Page</div>
-    <p>
-        <a href="/products/add">Add Product</a>
-    </p>
-    <ol>
-        <% products.forEach(product=> { %>
-            <li>
-                <%= product.name %> - <%= product.description %> - <%= product.price %> - <%= product.imageurl %>- <a
-                                    href="/products/<%= product._id %>/edit">Edit</a>&nbsp;<a
-                                    href="/products/<%= product._id %>/delete">Delete</a>
-            </li>
-            <% }) %>
-    </ol>
+    <div class="products-page">
+
+        <div class="products-header">
+            <h2>🛍️ Products Management</h2>
+            <a href="/products/add" class="add-btn">+ Add Product</a>
+        </div>
+
+        <div class="table-container">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% products.forEach(product=> { %>
+                        <tr>
+                            <td>
+                                <img src="<%= product.imageurl %>" class="product-img" />
+                            </td>
+
+                            <td>
+                                <%= product.name %>
+                            </td>
+
+                            <td class="desc">
+                                <%= product.description %>
+                            </td>
+
+                            <td class="price">₹<%= product.price %>
+                            </td>
+
+                            <td>
+                                <a href="/products/<%= product._id %>/edit" class="edit">Edit</a>
+                                <a href="/products/<%= product._id %>/delete" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 
 </body>
 
