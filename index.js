@@ -16,6 +16,10 @@ const app = express();
 
 dotenv.config();
 
+app.get("/health", (req, res) => {
+    res.status(200).send("OK");
+});
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(expressLayouts);
