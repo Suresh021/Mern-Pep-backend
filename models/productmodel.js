@@ -5,7 +5,7 @@ const productSchema = mongoose.Schema({
     price: { type: Number, required: true },
     description: { type: String, required: true },
     imageurl: { type: String, required: true },
-
+    category: { type: String, required: true, enum: ["Dresses", "Accessories", "Shoes", "Watches"] }
 });
 const productModel = mongoose.model("products", productSchema);
 export default productModel;
